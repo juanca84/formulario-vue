@@ -17,6 +17,12 @@
             <label for="mensaje">Mensaje:</label>
             <textarea name="mensaje" id="mensaje" cols="60" rows="10" class="form-control" v-model="mensaje"></textarea> 
           </div>
+          <div class="form-group">
+            <input type="checkbox" id="enviaremail" value="enviaremail" v-model="opcionEmail">
+            <label for="enviaremail" class="form-check form-check-inline">Enviar Email</label>
+            <input type="checkbox" id="enviarcopia" value="enviarcopia" v-model="opcionEmail">   
+            <label for="enviarcopia" class="form-check form-check-inline">Enviar Copia</label> 
+          </div>
         </div>
       </div>
     </form>
@@ -32,6 +38,12 @@
             <p><strong>Email:</strong> {{datosPersona.email}}</p>
             <p><strong>Mensaje:</strong></p>
             <p class="formato-text-area">{{mensaje}}</p>
+            <p><strong>Opción de envío:</strong></p>
+            <p>
+              <ul>
+                <li v-for="item in opcionEmail" :key="item">{{item}}</li>
+              </ul>
+            </p>
           </div>
         </div>
       </div>
@@ -48,7 +60,8 @@ export default {
         nombre:'',
         email:''
       },
-      mensaje: 'Test mensaje'
+      mensaje: 'Test mensaje',
+      opcionEmail: []
     }
   }
 }
