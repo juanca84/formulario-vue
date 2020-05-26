@@ -29,6 +29,12 @@
             <input type="radio" id="femenino" value="F" v-model="genero">   
             <label for="femenino" class="form-check form-check-inline">Femenino</label> 
           </div>
+          <div class="form-group">
+            <label for="horario">Horario</label>
+            <select id="horario" class="form-control" v-model="horario">
+              <option v-for="item in datosHorario" :value="item" :key="item" :selected="horario=='Mañana'">{{item}}</option>
+            </select>
+          </div>
         </div>
       </div>
     </form>
@@ -51,6 +57,7 @@
               </ul>
             </p>
             <p><strong>Genero:</strong> {{genero}}</p>
+            <p><strong>Horario:</strong> {{horario}}</p>
           </div>
         </div>
       </div>
@@ -69,7 +76,9 @@ export default {
       },
       mensaje: 'Test mensaje',
       opcionEmail: [],
-      genero: 'M'
+      genero: 'M',
+      datosHorario:['Mañana','Tarde','Noche'],
+      horario: 'Mañana'
     }
   }
 }
