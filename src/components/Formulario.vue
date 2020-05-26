@@ -35,10 +35,13 @@
               <option v-for="item in datosHorario" :value="item" :key="item" :selected="horario=='Mañana'">{{item}}</option>
             </select>
           </div>
+          <div class="form-group">
+            <button class="btn btn-primary float-right" @click.prevent="enviar">Enviar Datos</button>
+          </div>
         </div>
       </div>
     </form>
-    <div class="row">
+    <div class="row" v-if="enviado">
       <div class="col-xs12 col-sm-8 col-md-6">
         <hr>
         <div class="panel panel-default">
@@ -78,7 +81,14 @@ export default {
       opcionEmail: [],
       genero: 'M',
       datosHorario:['Mañana','Tarde','Noche'],
-      horario: 'Mañana'
+      horario: 'Mañana',
+      enviado: false
+    }
+  },
+  methods:{
+    enviar(){
+      alert('Se han enviado los datos exitosamente!!')
+      this.enviado = true;
     }
   }
 }
