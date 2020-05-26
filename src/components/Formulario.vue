@@ -23,6 +23,12 @@
             <input type="checkbox" id="enviarcopia" value="enviarcopia" v-model="opcionEmail">   
             <label for="enviarcopia" class="form-check form-check-inline">Enviar Copia</label> 
           </div>
+          <div class="form-group">
+            <input type="radio" id="masculino" value="M" v-model="genero">
+            <label for="masculino" class="form-check form-check-inline">Masculino</label>
+            <input type="radio" id="femenino" value="F" v-model="genero">   
+            <label for="femenino" class="form-check form-check-inline">Femenino</label> 
+          </div>
         </div>
       </div>
     </form>
@@ -44,6 +50,7 @@
                 <li v-for="item in opcionEmail" :key="item">{{item}}</li>
               </ul>
             </p>
+            <p><strong>Genero:</strong> {{genero}}</p>
           </div>
         </div>
       </div>
@@ -61,7 +68,8 @@ export default {
         email:''
       },
       mensaje: 'Test mensaje',
-      opcionEmail: []
+      opcionEmail: [],
+      genero: 'M'
     }
   }
 }
