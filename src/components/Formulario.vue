@@ -7,11 +7,11 @@
           <hr>
           <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" class="form-control" v-model='nombre'>
+            <input type="text" id="nombre" class="form-control" v-model='datosPersona.nombre'>
           </div>
           <div clas="form-group">
             <label for="email">Email:</label>
-            <input type="text" id="email" class="form-control" v-model='email'>
+            <input type="text" id="email" class="form-control" v-model='datosPersona.email'>
           </div>
         </div>
       </div>
@@ -24,8 +24,8 @@
             <h3 class="text-center">Datos</h3>
           </div>
           <div class="panel-body">
-            <p>Nombre: {{nombre}}</p>
-            <p>Email: {{email}}</p>
+            <p>Nombre: {{datosPersona.nombre}}</p>
+            <p>Email: {{datosPersona.email}}</p>
           </div>
         </div>
       </div>
@@ -38,8 +38,10 @@ export default {
   name: 'Formulario',
   data(){
     return{
-      nombre:'',
-      email:''
+      datosPersona:{
+        nombre:'',
+        email:''
+      }
     }
   }
 }
