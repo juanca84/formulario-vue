@@ -9,9 +9,13 @@
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" class="form-control" v-model='datosPersona.nombre'>
           </div>
-          <div clas="form-group">
+          <div class="form-group">
             <label for="email">Email:</label>
             <input type="text" id="email" class="form-control" v-model='datosPersona.email'>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea name="mensaje" id="mensaje" cols="60" rows="10" class="form-control" v-model="mensaje"></textarea> 
           </div>
         </div>
       </div>
@@ -21,11 +25,13 @@
         <hr>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="text-center">Datos</h3>
-          </div>
+            <h3 class="text-center">Datos Ingresados</h3>
+          </div> 
           <div class="panel-body">
-            <p>Nombre: {{datosPersona.nombre}}</p>
-            <p>Email: {{datosPersona.email}}</p>
+            <p><strong>Nombre:</strong> {{datosPersona.nombre}}</p>
+            <p><strong>Email:</strong> {{datosPersona.email}}</p>
+            <p><strong>Mensaje:</strong></p>
+            <p class="formato-text-area">{{mensaje}}</p>
           </div>
         </div>
       </div>
@@ -41,11 +47,15 @@ export default {
       datosPersona:{
         nombre:'',
         email:''
-      }
+      },
+      mensaje: 'Test mensaje'
     }
   }
 }
 </script>
 
 <style scoped>
+  .formato-text-area{
+    white-space: pre;
+  }
 </style>
